@@ -180,6 +180,14 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # compton
 exec_always --no-startup-id compton 
+exec_always --no-startup-id unclutter
+
+# xss-lock
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
+
+# enable horizontal scroll
+exec_always --no-startup-id xinput --set-prop 13 "Synaptics Two-Finger Scrolling" 1 1
+exec_always --no-startup-id /usr/bin/syndaemon -i 0.3 -d -t
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
